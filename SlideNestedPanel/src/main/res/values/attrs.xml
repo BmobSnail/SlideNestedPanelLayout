@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--嵌套滑动的拖拽面板-->
+    <declare-styleable name="SlideNestedPanelLayout">
+        <attr name="panelHeight" format="dimension" /><!--面板高度-->
+        <attr name="shadowHeight" format="dimension" /><!--阴影高度-->
+        <attr name="parallaxOffset" format="dimension" /><!--视觉差比例-->
+        <attr name="fadeColor" format="color" /><!--渐变颜色-->
+        <attr name="flingVelocity" format="integer" /><!--滑动速度-->
+        <attr name="drawView" format="reference" /><!--嵌套拖拽控件-->
+        <attr name="scrollView" format="reference" /><!--嵌套滑动控件-->
+        <attr name="overlay" format="boolean" /><!--是否覆盖-->
+        <attr name="clipPanel" format="boolean" /><!--裁剪面板-->
+        <attr name="anchorPoint" format="float" /><!--拖拽描点-->
+        <attr name="interpolator" format="reference" /><!--动画插值器-->
+        <attr name="initialState" format="enum" ><!--初始化状态-->
+            <enum name="expanded" value="0" />
+            <enum name="collapsed" value="1" />
+            <enum name="anchored" value="2" />
+            <enum name="hidden" value="3" />
+        </attr>
+    </declare-styleable>
+
+</resources>

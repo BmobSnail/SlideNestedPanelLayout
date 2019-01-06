@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="0"
+    android:background="@drawable/bg_cardview_white_top"
+    android:overScrollMode="never"
+    tools:alpha="1.0">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="0dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="25dp"
+            android:layout_margin="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:id="@+id/cardView"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="#59cebe"
+                android:transitionName="avatar" />
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:text="一种色彩一座城,多彩摩洛哥自由行、慢行、心灵之旅"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@+id/cardView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:alpha="0.8"
+            android:drawableStart="@mipmap/icon_tour_location"
+            android:drawablePadding="4dp"
+            android:text="摩洛哥"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:alpha="0.8"
+            android:drawableStart="@mipmap/icon_tour_map"
+            android:drawablePadding="4dp"
+            android:text="线路玩法"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView1"
+            app:layout_constraintStart_toEndOf="@+id/textView1"
+            app:layout_constraintTop_toTopOf="@+id/textView1" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawableStart="@mipmap/icon_tour_label"
+            android:drawablePadding="4dp"
+            android:text="心灵之旅"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:alpha="0.8"
+            android:drawableStart="@mipmap/icon_tour_label"
+            android:drawablePadding="4dp"
+            android:text="古城"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:alpha="0.8"
+            android:drawableStart="@mipmap/icon_tour_label"
+            android:drawablePadding="4dp"
+            android:text="清真寺"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/background"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="行程详情"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_tour_background"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="It was a humorously peritous business for both of us.For, before we proceed further,it must be said that the mokey-rope was fast at both ends.fast to Queequeg's broad canvas belt,and fast to my narrow leather one,So tat for better or for worse.所以说这是一场净化心灵之旅"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView1" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/background"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+            app:tabIndicatorColor="@color/yellow"
+            app:tabIndicatorHeight="2dp"
+            app:tabMaxWidth="80dp"
+            app:tabMinWidth="50dp"
+            app:tabPadding="-1dp"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextColor="@color/gray" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            android:layout_marginTop="5dp"
+            android:background="#aabbcc"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v4.widget.NestedScrollView>
