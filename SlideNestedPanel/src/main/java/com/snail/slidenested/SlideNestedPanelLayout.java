@@ -1076,7 +1076,7 @@ public class SlideNestedPanelLayout extends ViewGroup {
 //            } else if (direction < 0 && mSlideOffset < mAnchorPoint) {//下滑超过基准点，完全收缩
 //                mArrivedTopFlag = false;
 //                target = computePanelTopPosition(0.0f);
-//            } else
+//            } else    
             if (mSlideOffset >= (1.f + mAnchorPoint) / 2) {//超过基准点足够远，完全展开
                 mArrivedTopFlag = true;
                 target = computePanelTopPosition(1.0f);
