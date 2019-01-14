@@ -9,18 +9,13 @@ import android.widget.FrameLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TabLayout mTabLayout;
-    private NestedScrollView mScrollView;
-    private SlideNestedPanelLayout mSlidePanleLayout;
-    private FrameLayout mFrameLayout;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mFrameLayout = findViewById(R.id.frameLayout);
-        mTabLayout = findViewById(R.id.tabLayout);
+        final FrameLayout mFrameLayout = findViewById(R.id.frameLayout);
+        TabLayout mTabLayout = findViewById(R.id.tabLayout);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mTabLayout.addTab(mTabLayout.newTab().setText("费用说明"));
         mTabLayout.addTab(mTabLayout.newTab().setText("预定须知"));
@@ -54,10 +49,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mScrollView = findViewById(R.id.nestedScrollView);
+        NestedScrollView mScrollView = findViewById(R.id.nestedScrollView);
         mScrollView.animate().translationY(-150).alpha(1.0f).setDuration(500);
-
-        mSlidePanleLayout = findViewById(R.id.slideNestedPanelLayout);
-//        mSlidePanleLayout.setEnabled(false);
     }
 }
