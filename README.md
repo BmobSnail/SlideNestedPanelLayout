@@ -5,7 +5,7 @@
 
 先看效果图，客观满意再star一波
 
-![image](https://github.com/BmobSnail/SlideNestedPanelLayout/screenshot/sample.gif)
+![image](https://github.com/BmobSnail/SlideNestedPanelLayout/blob/master/screenshot/sample.gif)
 
 #### v.1.0.0
 - 1.主要针对上述库精简
