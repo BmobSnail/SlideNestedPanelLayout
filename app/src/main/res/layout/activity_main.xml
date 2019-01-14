@@ -7,14 +7,13 @@
     tools:context=".MainActivity">
 
     <com.snail.slidenested.SlideNestedPanelLayout
+        android:id="@+id/slideNestedPanelLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="bottom"
         app:anchorPoint="0.65"
         app:panelHeight="250dp"
-        app:parallaxOffset="0dp"
-        app:scrollView="@+id/nestedScrollView"
-        app:shadowHeight="0dp">
+        app:parallaxOffset="50dp"
+        app:scrollView="@+id/nestedScrollView">
 
         <include layout="@layout/include_main_top" />
 

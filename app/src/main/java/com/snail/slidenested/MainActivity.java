@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TabLayout mTabLayout;
     private NestedScrollView mScrollView;
+    private SlideNestedPanelLayout mSlidePanleLayout;
     private FrameLayout mFrameLayout;
 
     @Override
@@ -56,5 +57,7 @@ public class MainActivity extends AppCompatActivity {
         mScrollView = findViewById(R.id.nestedScrollView);
         mScrollView.animate().translationY(-150).alpha(1.0f).setDuration(500);
 
+        mSlidePanleLayout = findViewById(R.id.slideNestedPanelLayout);
+//        mSlidePanleLayout.setEnabled(false);
     }
 }

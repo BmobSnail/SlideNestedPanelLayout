@@ -11,6 +11,5 @@ public enum PanelState {
     EXPANDED,
     COLLAPSED,
     ANCHORED,
-    HIDDEN,
     DRAGGING
 }
