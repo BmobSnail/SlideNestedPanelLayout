@@ -118,8 +118,8 @@ public class SlideNestedPanelLayout extends ViewGroup {
     private boolean isMyHandleTouch = false;
     
     
-    //是否到顶
-    private boolean isOnTopFlag = false;
+    //是否到顶(-1不确定、0底部、1顶部)
+    private short isOnTopFlag = -1;
 
 
     //绘制区域
@@ -128,6 +128,10 @@ public class SlideNestedPanelLayout extends ViewGroup {
 
     //当Main滑动时用来画渐变的画笔
     private final Paint mCoveredFadePaint = new Paint();
+
+
+    //状态回调
+    private StateCallback stateCallback;
 
 
     //标记触摸位置
@@ -426,7 +430,7 @@ public class SlideNestedPanelLayout extends ViewGroup {
 
                     //scrollY=0表示没滑动过，canScroll(1)表示可scroll up
                     //逻辑或的意义：拖拽到顶后，要不要禁用外部拖拽
-                    if (isOnTopFlag) {
+                    if (isOnTopFlag == 1) {
                         int offset = mDragView.getScrollY();
                         boolean scroll = mScrollableViewHelper.getScrollableViewScrollPosition(mScrollView, true) > 0;
                         setEnabled(offset == 0 || scroll);
@@ -543,11 +547,18 @@ public class SlideNestedPanelLayout extends ViewGroup {
         final int targetY = computePanelToPosition(mAnchorPoint);
         final int originalY = computePanelToPosition(0f);
         if (mDragView.getTop() == targetY) {
-            isOnTopFlag = true;
+            //避免多次回调
+            if (isOnTopFlag != 1 && stateCallback != null) {
+                stateCallback.onExpandedState();
+            }
+            isOnTopFlag = 1;
         }else if (mDragView.getTop() == originalY){
-            isOnTopFlag = false;
+            if (isOnTopFlag == -1 && stateCallback != null) {
+                stateCallback.onCollapsedState();
+            }
+            isOnTopFlag = 0;
         }else {
-            isOnTopFlag = false;
+            isOnTopFlag = -1;
         }
 
         canvas.restoreToCount(save);
@@ -638,6 +649,10 @@ public class SlideNestedPanelLayout extends ViewGroup {
     private float computeSlideOffset(int topPosition) {
         final int topBoundCollapsed = computePanelToPosition(0f);
         return (float) (topBoundCollapsed - topPosition) / mSlideRange;
+    }
+
+    public void setStateCallback(StateCallback callback){
+        this.stateCallback = callback;
     }
 
 
