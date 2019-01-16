@@ -651,6 +651,8 @@ public class SlideNestedPanelLayout extends ViewGroup {
         return (float) (topBoundCollapsed - topPosition) / mSlideRange;
     }
 
+
+    /**状态回调*/
     public void setStateCallback(StateCallback callback){
         this.stateCallback = callback;
     }
@@ -688,7 +690,7 @@ public class SlideNestedPanelLayout extends ViewGroup {
         public void onViewPositionChanged(View changedView, int left, int top, int dx, int dy) {
             slideUp = dy > 0;//正为收缩，负为展开
             onPanelDragged(top);
-            invalidate();
+//            invalidate();
         }
 
         @Override
@@ -712,7 +714,7 @@ public class SlideNestedPanelLayout extends ViewGroup {
                 mDragHelper.settleCapturedViewAt(releasedChild.getLeft(), target);
             }
 
-            invalidate();
+//            invalidate();
         }
 
         @Override
